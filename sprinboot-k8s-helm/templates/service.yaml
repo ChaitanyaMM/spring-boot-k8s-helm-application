@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "sprinboot-k8s-helm.fullname" . }}
+  labels:
+    {{- include "sprinboot-k8s-helm.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - name : sample-helm
+      port: 8989
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "sprinboot-k8s-helm.selectorLabels" . | nindent 4 }}
