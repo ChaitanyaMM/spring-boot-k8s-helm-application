@@ -50,9 +50,9 @@
 16.helm uninstall hello-world (for deleting/uninstalling the applicaion).
 
 
-=============================================================================
 for working with this github project
-============================(create own package)
+============================
+(create own package)
 helm create deis-workflow
 helm package deis-workflow
 helm install deis-workflow ./deis-workflow-0.1.0.tgz
